@@ -1,0 +1,279 @@
+/* Estilos globais para o body */
+body {
+    font-family: 'Roboto', sans-serif;  /* Define a fonte padrão do texto               */
+    margin: 0 auto;                     /* Remove as margens padrão do body             */
+    padding: 0;                         /* Remove o preenchimento padrão do body        */
+    color: #014512;                   /* Define a cor primária do texto como verde    */
+    background-color: #e8e8e8;        /* Define a cor de fundo do body como cinza     */
+    height: 100vh;                      /* Garante que o body ocupe toda a altura       */
+}
+
+/* Estilos para o container principal */
+.container {
+    display: flex;                      /* Utiliza o modelo de layout Flexbox            */
+    flex-wrap: wrap;                    /* Permite que os itens quebrem para próx linha  */
+    justify-content: space-around;      /* Distribui os itens com espaço entre eles      */
+}
+
+/* Media query para telas menores (até 768px de largura) */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;                /* Reduz o tamanho da fonte do body              */
+    }
+    .menu {
+        flex-direction: column;         /* Alinha os itens do menu verticalmente         */
+    }
+}
+
+/* Estilos para imagens */
+img {
+    max-width: 100%;                    /* Garante que a imagem não exceda o container   */
+    height: auto;                       /* Mantém a proporção da imagem                  */
+}
+
+/* ================================================================================= */
+
+/* Estilos para o título principal (h1 dentro do body) */
+h1 {
+    text-align: center !important;                     /* Centraliza o texto do título                  */
+    margin-bottom: 20px;                    /* Adiciona margem inferior de 20 pixels         */
+    margin: 0 auto;
+    text-align: justify;
+    padding: 50px;
+    margin-block-end: 20px;
+    margin-top: 100px;
+}
+
+/* Estilos para divs dentro do body */
+body div {
+    display: flex;
+    width: auto;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0px;
+    align-content: space-around;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 5px;
+    color: #e8e8e8;
+}
+
+/* Estilos para o container do tooltip */
+.tooltip-container {
+    --background: #e8e8e8;            /* Define variável CSS para cor de fundo         */
+    --color: #014512;                 /* Define variável CSS para cor do texto         */
+    position: relative;                 /* Permite posicionar elementos filhos           */
+    cursor: pointer;                    /* Altera cursor para indicar interatividade     */
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    font-size: 18px;                    /* Define tamanho da fonte                       */
+    font-weight: 600;                   /* Define espessura da fonte como semibold       */
+    color: var(--color);                /* Usa variável CSS para cor do texto            */
+    padding: 0.7em 1.8em;               /* Define preenchimento vertical e horizontal    */
+    border-radius: 8px;                 /* Arredonda os cantos do container              */
+    text-transform: uppercase;          /* Converte o texto para maiúsculas              */
+    height: 60px;                       /* Define altura do container                    */
+    width: 180px;                       /* Define largura do container                   */
+    display: -ms-inline-flexbox;        /* Suporte para versões antigas do IE            */
+    place-items: center;                /* Centraliza os itens flexíveis                 */
+    border: 0px solid var(--color);     /* Define borda transparente                     */
+}
+
+/* Estilos para o texto principal dentro do tooltip container */
+.tooltip-container .text {
+    position: absolute;                 /* Permite posicionar texto sobre outros        */
+    top: 0;                             /* Alinha topo do texto com topo do container   */
+    left: 0;                            /* Alinha esquerda do texto com container       */
+    width: 100%;                        /* Ocupa toda largura do container              */
+    height: 100%;                       /* Ocupa toda altura do container               */
+    display: grid;                      /* Utiliza modelo de layout Grid                */
+    place-items: center;                /* Centraliza o texto                           */
+    transform-origin: -100%;            /* Define origem da transformação               */
+    transform: scale(1);                /* Escala inicial do texto                      */
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Estilos para o elemento span que aparece no hover */
+.tooltip-container span:last-child {
+    position: absolute;                 /* Permite posicionar o span sobre outros       */
+    top: 0%;                            /* Alinha topo do span com topo do container    */
+    left: 100%;                         /* Posiciona span à direita do container        */
+    width: 100%;                        /* Ocupa toda largura do container              */
+    height: 100%;                       /* Ocupa toda altura do container               */
+    border-radius: 8px;                 /* Arredonda os cantos do span                  */
+    opacity: 1;                         /* Define opacidade inicial                     */
+    background-color: var(--background); /* Usa variável CSS para cor de fundo          */
+    z-index: -1;                         /* Posiciona span atrás do texto principal     */
+    border: 2px solid var(--background); /* Adiciona borda com cor de fundo             */
+    transform: scale(0);                 /* Inicialmente escalado para 0 (invisível)    */
+    transform-origin: 0;                 /* Define origem da transformação              */
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    display: grid;                       /* Utiliza modelo de layout Grid               */
+    place-items: center;                 /* Centraliza conteúdo do span                 */
+}
+
+/* Estilos para o tooltip (caixa de texto que aparece) */
+.tooltip {
+    position: absolute;                 /* Permite posicionar o tooltip                */
+    top: 0;                             /* Alinha topo do tooltip com container        */
+    left: 50%;                          /* Centraliza horizontalmente                  */
+    transform: translateX(-50%);        /* Ajusta posicionamento para centralizar      */
+    padding: 0.3em 0.6em;               /* Define preenchimento interno                */
+    opacity: 0;                         /* Inicialmente tooltip é invisível            */
+    pointer-events: none;               /* Evita interação quando invisível            */
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    background: var(--background);      /* Usa variável CSS para cor de fundo          */
+    z-index: -1;                        /* Posiciona tooltip atrás do conteúdo         */
+    border-radius: 8px;                 /* Arredonda os cantos do tooltip              */
+    scale: 0;                           /* Inicialmente escalado para 0                */
+    transform-origin: 0 0;              /* Define origem da transformação              */
+    text-transform: capitalize;         /* Capitaliza primeira letra de cada palavra   */
+    font-weight: 400;                   /* Define espessura da fonte como normal       */
+    font-size: 16px;                    /* Define tamanho da fonte                     */
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+}
+
+/* Estilos para a seta do tooltip */
+.tooltip::before {
+    position: absolute;                 /* Permite posicionar a pseudo-classe         */
+    content: "";                        /* Conteúdo vazio para criar o elemento       */
+    height: 0.6em;                      /* Define altura da seta                      */
+    width: 0.6em;                       /* Define largura da seta                     */
+    bottom: -0.2em;                     /* Posiciona seta ligeiramente abaixo         */
+    left: 50%;                          /* Centraliza horizontalmente                 */
+    transform: translate(-50%) rotate(45deg);
+    background: var(--background);      /* Usa mesma cor de fundo do tooltip         */
+}
+
+/* Estilos aplicados ao tooltip-container no hover */
+.tooltip-container:hover .tooltip {
+    top: -100%;                         /* Move tooltip para cima                    */
+    opacity: 1;                         /* Torna tooltip visível                     */
+    visibility: visible;                /* Garante que tooltip seja visível          */
+    pointer-events: auto;               /* Permite interação com eventos do mouse    */
+    scale: 1;                           /* Restaura escala normal do tooltip         */
+    animation: shake 0.5s ease-in-out both;
+}
+
+/* Estilos aplicados ao tooltip-container no hover */
+.tooltip-container:hover {
+    color: rgb(7, 78, 39);             /* Altera cor do texto no hover              */
+    border-color: transparent;           /* Remove borda no hover                     */
+}
+
+/* Estilos aplicados ao span no hover do tooltip-container */
+.tooltip-container:hover span:last-child {
+    transform: scale(1);                /* Expande span para cobrir container        */
+    left: 0;                            /* Move span para esquerda                   */
+}
+
+/* Estilos aplicados ao texto no hover do tooltip-container */
+.tooltip-container:hover .text {
+    opacity: 0;                         /* Torna texto principal invisível           */
+    top: 0%;                            /* Garante alinhamento superior              */
+    left: 100%;                         /* Move texto para direita                   */
+    transform: scale(0);                /* Reduz escala do texto a zero              */
+}
+
+/* Estilos para o container dos "cubos" */
+.container {
+    display: grid;                      /* Utiliza modelo de layout Grid             */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;                          /* Define espaçamento entre linhas/colunas   */
+    justify-content: center;            /* Centraliza itens horizontalmente          */
+    align-items: center;                /* Centraliza itens verticalmente            */
+    padding: 0%;                        /* Adiciona preenchimento interno            */
+    max-width: 400px;                   /* Define largura máxima para container      */
+    margin-block: 0 auto;               /* Centraliza container horizontalmente      */
+}
+
+/* Estilos para os itens dentro do container dos "cubos" */
+.tooltip-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 50px;                      /* Preenchimento interno maior               */
+    text-align: center;                 /* Centraliza texto                          */
+    border-radius: none;                /* Remove borda arredondada                  */
+    cursor: pointer;                    /* Indica interatividade                     */
+    font-size: 18px;                    /* Tamanho da fonte                          */
+    font-weight: 600;                   /* Espessura da fonte                        */
+}
+
+/* Estilos para a imagem dentro dos itens dos "cubos" */
+.tooltip-container img {
+    width: 80px;                        /* Largura da imagem                       */
+    height: 80px;                       /* Altura da imagem                        */
+    background: #e8e8e8;              /* Cor de fundo da imagem                  */
+    box-shadow: 20px 20px 60px #014512, -20px -20px 60px #e8e8e8;
+    object-fit: cover;                  /* Garante que imagem cubra área           */
+    border-radius: 20px;                /* Arredonda cantos da imagem              */
+    display: flex;                      /* Utiliza Flexbox para centralizar        */
+    justify-content: center;            /* Centraliza horizontalmente              */
+    align-items: center;                /* Centraliza verticalmente                */
+    transform: translateY(-20px);       /* Move imagem 20 pixels para cima         */
+}
+
+/* ================== RESPONSIVIDADE ================== */
+
+/* Adapta layout para telas menores (até 1330px de largura) */
+@media screen and (max-width: 1330px) {
+    section {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;                      /* Reduz espaço entre os itens              */
+    }
+}
+
+/* Adapta layout para dispositivos móveis (até 1330px de largura) */
+@media screen and (max-width: 1444px) {
+    section {
+        display: flex;                  /* Usa Flexbox para organizar elementos     */
+        flex-direction: column;         /* Empilha elementos verticalmente          */
+        justify-content: center;        /* Centraliza elementos verticalmente       */
+        align-items: center;            /* Centraliza elementos horizontalmente     */
+        gap: 20px;                      /* Adiciona espaço entre os cards           */
+        padding: 20px;                  /* Espaçamento interno em todos os lados    */
+    }
+
+    h1{
+    width: auto;  /* Largura fixa, mas o grid/flexbox do container os reorganiza */
+    height: auto;
+    text-align: center;
+    }
+
+    body {
+        height: auto;
+        display: flex;                  /* Mantém display flexível                 */
+        flex-direction: column;         /* Empilha elementos em coluna             */
+        width: auto;                    /* Ocupa toda largura disponível           */
+        text-align: center;             /* Garante alinhamento ce   ntralizado     */
+        margin: 0 auto;
+        padding: 0%;
+    }
+}
+.tooltip-container {
+    /* Layout Flexbox - Organiza os elementos filhos em coluna */
+    display: flex;                      /* Ativa o modelo de layout flexível          */
+    flex-direction: column;             /* Empilha os elementos verticalmente        */
+    align-items: center;                /* Centraliza os elementos horizontalmente   */
+}
+
+/* Efeitos ao passar o mouse no container (hover) */
+.tooltip-container:hover span:last-child:not(.text) {
+    transform: scale(1.15);             /* Aumenta o texto em 15%                    */
+    font-weight: bold;                  /* Deixa o texto em negrito                  */
+    color: #014512;                   /* Muda a cor para verde escuro              */
+}
+
+/* Ajuste da imagem dentro do tooltip */
+.tooltip-container .text img {
+    margin-bottom: 8px;                 /* Adiciona espaçamento abaixo da imagem     */
+}
+
+/* Animação de "shake" */
+@keyframes shake {
+    0% { rotate: 0; }                   /* Rotação inicial                          */
+    25% { rotate: 7deg; }               /* Rotação para direita                     */
+    50% { rotate: -7deg; }              /* Rotação para esquerda                    */
+    75% { rotate: 1deg; }               /* Pequena rotação para direita             */
+    100% { rotate: 0; }                 /* Retorna à rotação inicial                */
+}
+

@@ -1,0 +1,230 @@
+/* ================== VARIÁVEIS ================== */
+:root {
+    --verde-escuro: #014512;             /* Verde escuro usado no texto e hover */
+    --verde-claro: #b2dfcf;              /* Verde claro para fundo de cards */
+    --cinza-claro: #e8e8e8;              /* Cor de fundo do body */
+    --cinza-card: #e0e0e0;               /* Cor de fundo dos botões e cards */
+    --sombra-escura: #bebebe;            /* Sombra inferior (efeito 3D) */
+    --sombra-clara: #ffffff;             /* Sombra superior (efeito 3D) */
+    --fonte-padrao: 'Roboto', sans-serif;  /* Fonte padrão do site */
+}
+
+/* ================== CONFIGURAÇÕES GERAIS ================== */
+
+body {
+    font-family: var(--fonte-padrao);       /* Aplica a fonte definida nas variáveis */
+    color: var(--verde-escuro);             /* Define a cor do texto */
+    background-color: var(--cinza-claro);   /* Define a cor de fundo da página */
+    height: 100vh;                          /* Faz o body ocupar 100% da altura da viewport */
+}
+
+a {
+    outline: none;                    /* Remove o contorno azul padrão */
+    text-decoration: none;            /* Remove sublinhado dos links */
+}
+
+a:focus {
+    outline: none;                    /* Garante que o contorno continue removido ao focar */
+}
+
+/* ================== CABEÇALHO ================== */
+header {
+    text-align: center;              /* Centraliza o conteúdo */
+    margin-bottom: 30px;             /* Espaço abaixo do cabeçalho */
+}
+
+header h1 {
+    font-size: 2.5em;                /* Aumenta o tamanho do título */
+    margin: 0;                       /* Remove margens padrão */
+}
+
+header p {
+    font-size: 1.2em;                /* Tamanho intermediário do subtítulo */
+    color: var(--verde-escuro);      /* Mantém a identidade visual com o verde escuro */
+}
+
+/* ================== RODAPÉ ================== */
+footer p {
+    display: flex;                  /* Ativa o Flexbox */
+    justify-content: center;        /* Centraliza horizontalmente */
+    align-items: center;            /* Centraliza verticalmente */
+    height: 30vh;                   /* Altura de 30% da viewport */
+    margin: 0;                      /* Remove margens padrão */
+}
+
+/* ================== BOTÕES ================== */
+button {
+    font-family: var(--fonte-padrao);      /* Fonte igual ao restante do site */
+    font-size: 0.7em;                      /* Tamanho reduzido da fonte */
+    text-align: center;                    /* Centraliza o texto */
+    background-color: var(--cinza-card);   /* Cor de fundo do botão */
+    color: var(--verde-escuro);            /* Cor do texto */
+    border: none;                          /* Remove borda padrão */
+    cursor: pointer;                       /* Cursor de mãozinha ao passar */
+    border-radius: 50px;                   /* Borda totalmente arredondada */
+    width: 220px;                          /* Largura do botão */
+    height: 100px;                         /* Altura do botão */
+    transition: 0.2s;                      /* Suaviza a transição no hover */
+    box-shadow: 20px 20px 60px var(--sombra-escura), -20px -20px 60px var(--sombra-clara); /* Efeito de sombra 3D */
+}
+
+button:hover {
+    background-color: var(--verde-escuro);       /* Muda fundo no hover */
+    box-shadow: 0 0 0 5px var(--verde-escuro);   /* Adiciona contorno colorido */
+    color: #fff;                               /* Muda texto para branco */
+}
+
+/* ================== SEÇÃO PRINCIPAL ================== */
+section {
+    display: grid;                         /* Layout de grade */
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas de tamanho igual */
+    gap: 40px;                             /* Espaço entre os itens */
+    justify-content: center;               /* Centraliza horizontalmente */
+    align-items: center;                   /* Centraliza verticalmente */
+    padding: 20px;                         /* Espaço interno */
+    max-width: 1200px;                     /* Largura máxima da seção */
+    margin: 0 auto;                        /* Centraliza a seção na página */
+}
+
+/* ================== CARDS DE LIVROS ================== */
+.book {
+    position: relative;                   /* Necessário para posicionamento absoluto dos filhos */
+    background-color: var(--verde-claro); /* Cor de fundo do card */
+    box-shadow: 20px 20px 60px var(--sombra-escura), -20px -20px 60px var(--sombra-clara); /* Sombra para efeito 3D */
+    perspective: 2000px;                  /* Efeito de profundidade para a animação 3D */
+    display: flex;                        /* Flexbox ativado */
+    align-items: center;                  /* Alinha conteúdo no centro vertical */
+    justify-content: center;              /* Alinha conteúdo no centro horizontal */
+    color: var(--verde-escuro);           /* Cor do texto interno */
+    width: 300px;                         /* Largura do card */
+    height: 450px;                        /* Altura do card */
+    border-radius: 50px;                  /* Bordas arredondadas */
+    background: var(--cinza-card);        /* Cor de fundo (sobrescreve anterior) */
+}
+
+/* ================== CAPA DOS LIVROS ================== */
+.cover {
+    position: absolute;                   /* Posicionamento absoluto dentro do card */
+    top: 0;                               /* Alinha ao topo do card */
+    background-color: var(--verde-claro); /* Cor da capa */
+    cursor: pointer;                      /* Mostra que é clicável */
+    transition: all 0.5s;                 /* Suaviza transições */
+    transform-origin: 0;                  /* Define o eixo da rotação */
+    box-shadow: 20px 20px 60px var(--sombra-escura), -20px -20px 60px var(--sombra-clara); /* Sombra para efeito 3D */
+    display: flex;                        /* Flexbox ativado */
+    align-items: center;                  /* Centraliza conteúdo verticalmente */
+    justify-content: center;              /* Centraliza conteúdo horizontalmente */
+    width: 300px;                         /* Largura igual ao card */
+    height: 450px;                        /* Altura igual ao card */
+    border-radius: 50px;                  /* Mesma borda do card */
+    background: var(--cinza-card);        /* Mesma cor do card */
+}
+
+.book:hover .cover {
+    transform: rotateY(-85.8deg);          /* Faz a capa girar no eixo Y ao passar o mouse */
+}
+
+/* ================== TEXTOS DOS CARDS ================== */
+.texto-dentro {
+    font-size: 17px;                     /* Tamanho base do texto */
+    text-align: center;                  /* Centraliza o texto */
+    padding: 0;                          /* Espaçamento interno */
+    padding-left: -15px;                 /* Espaçamento interno */
+    padding-right: -15px;                /* Espaçamento interno */
+    width: 100%;                         /* Ocupa toda a largura do card */
+    height: 100%;                        /* Ocupa toda a altura do card */
+    display: flex;                       /* Flexbox ativado */
+    align-items: center;                 /* Centraliza verticalmente */
+    justify-content: center;             /* Centraliza horizontalmente */
+}
+
+.texto-dentro ul {
+    list-style: none;
+    padding-inline-start: 10px;
+    padding-right: 10px;
+}
+
+.texto-fora {
+    text-align: center;                  /* Centraliza o texto */
+    justify-content: center;             /* Centraliza horizontalmente */
+    font-size: 25px;                     /* Maior que o texto interno para destaque na capa */
+    font-weight: bolder;                 /* Deixa em negrito */
+}
+
+.texto-aesquerda {
+    text-align: left!important;
+}
+
+/* ================== RESPONSIVIDADE ================== */
+@media screen and (max-width: 1330px) {
+    section {
+        grid-template-columns: repeat(2, 1fr); /* Reduz para duas colunas */
+        gap: 30px;                             /* Espaço menor entre os itens */
+    }
+}
+
+@media screen and (max-width: 700px) {         /* Aplica este bloco somente em telas com largura até 700px (mobile) */
+
+    section {
+        display: flex;                         /* Usa flexbox para organizar os elementos */
+        flex-direction: column;                /* Empilha os elementos verticalmente (em coluna) */
+        justify-content: center;               /* Centraliza os elementos verticalmente */
+        align-items: center;                   /* Centraliza os elementos horizontalmente */
+        gap: 20px;                             /* Adiciona espaço entre os cards */
+        padding: 20px;                         /* Espaçamento interno em todos os lados */
+    }
+
+    .texto-dentro,
+    .texto-fora{
+        padding-right: -15px;                  /* Espaçamento interno */
+        display: flex;                         /* Usa flexbox para alinhar o conteúdo interno */
+        justify-content: center;               /* Centraliza verticalmente o conteúdo */
+        flex-direction: column;                /* Empilha o conteúdo verticalmente */
+        align-items: center;                   /* Centraliza horizontalmente o conteúdo */
+        width: 100%;                           /* Faz o texto ocupar toda a largura disponível */
+        text-align: center;                    /* Centraliza o texto */
+    }
+}
+
+
+/* Estilos para a seção de contato */
+.contato-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.contato-item {
+    display: flex;
+    align-items: center;
+}
+
+.contato-item a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #014512;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.contato-item a:hover {
+    color: #01320e;
+    transform: translateY(-2px);
+}
+
+.contato-item i {
+    font-size: 1.2rem;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .contato-info {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+}
