@@ -36,12 +36,22 @@ img {
 /* Estilos para o título principal (h1 dentro do body) */
 h1 {
     text-align: center !important;                     /* Centraliza o texto do título                  */
-    margin-bottom: 20px;                    /* Adiciona margem inferior de 20 pixels         */
+    margin-bottom: 50px;                    /* Adiciona margem inferior de 20 pixels         */
     margin: 0 auto;
     text-align: justify;
-    padding: 50px;
+    padding: 10px;
     margin-block-end: 20px;
     margin-top: 100px;
+    box-shadow: 20px 20px 60px #e8e8e8, -20px -20px 60px #e8e8e8;
+    padding-top: center !important;
+    padding-inline-start: center !important;
+    margin-inline-end: auto;
+    margin-top: 10%;
+    margin-bottom: 20%;
+    border-radius: 20px;                /* Arredonda cantos da imagem              */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    color: #014512; /* ou a cor do texto que contraste com o fundo */
 }
 
 /* Estilos para divs dentro do body */
@@ -202,8 +212,8 @@ body div {
 .tooltip-container img {
     width: 80px;                        /* Largura da imagem                       */
     height: 80px;                       /* Altura da imagem                        */
-    background: #e8e8e8;              /* Cor de fundo da imagem                  */
-    box-shadow: 20px 20px 60px #014512, -20px -20px 60px #e8e8e8;
+    background: #ffffff;              /* Cor de fundo da imagem                  */
+    box-shadow: 20px 20px 60px #8b8b8b, -20px -20px 60px #e8e8e8;
     object-fit: cover;                  /* Garante que imagem cubra área           */
     border-radius: 20px;                /* Arredonda cantos da imagem              */
     display: flex;                      /* Utiliza Flexbox para centralizar        */
