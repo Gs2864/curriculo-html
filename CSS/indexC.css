@@ -36,7 +36,7 @@ img {
 /* Estilos para o título principal (h1 dentro do body) */
 h1 {
     text-align: center !important;                     /* Centraliza o texto do título                  */
-    margin-bottom: 50px;                    /* Adiciona margem inferior de 20 pixels         */
+    margin-bottom: 50px;                               /* Adiciona margem inferior de 20 pixels         */
     margin: 0 auto;
     text-align: justify;
     padding: 10px;
@@ -46,9 +46,9 @@ h1 {
     padding-top: center !important;
     padding-inline-start: center !important;
     margin-inline-end: auto;
-    margin-top: 10%;
-    margin-bottom: 20%;
-    border-radius: 20px;                /* Arredonda cantos da imagem              */
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border-radius: 10px;                               /* Arredonda cantos da imagem              */
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     color: #014512; /* ou a cor do texto que contraste com o fundo */
