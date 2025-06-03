@@ -1,55 +1,143 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- Configurações básicas do documento -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel Pereira - Certificados</title>
-    <link rel="stylesheet" href="./CSS/indexC.css">
-    <script src="./Index.js"></script>
-    <link rel="shortcut icon" href="./CSS/Imagens/G.ico" type="image/x-icon">
-    <!-- Font Awesome para ícones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Gabriel Silva - Certificados</title>
+    <link rel="stylesheet" href="CSS/indexC.css">
+    <script src="Index.js"></script>
+    <link rel="shortcut icon" href="CSS/Imagens/G.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="certificates-container">
-        <h1 class="certificates-title">
-            <i class="fas fa-certificate"></i> Meus Certificados
-            <div class="title-underline"></div>
-        </h1>
-        
-        <div class="certificates-grid">
-            <a href="CSS/PDFs/Certificado(1).pdf" target="_blank" class="certificate-card">
-                <div class="certificate-image">
-                    <img src="CSS/Imagens/Unincor.jpg" alt="Certificado Unincor">
-                    <div class="certificate-overlay">
-                        <span class="pdf-icon"><i class="fas fa-file-pdf"></i></span>
-                        <span class="view-text">Visualizar PDF</span>
+    <!-- Seção principal de certificados -->
+    <section class="certificates-section">
+        <div class="certificates-container">
+            <!-- Cabeçalho da seção -->
+            <header class="certificates-header">
+                <h1 class="certificates-title">
+                    <i class="fas fa-certificate"></i>
+                    Meus Certificados
+                </h1>
+                <div class="title-underline"></div>
+            </header>
+            
+            <!-- Grade de certificados -->
+            <div class="certificates-grid">
+                <!-- Certificado 1 -->
+                <div class="certificate-card">
+                    <div class="certificate-inner">
+                        <div class="certificate-front">
+                            <div class="certificate-image">
+                                <img src="CSS/Imagens/Unincor.jpg" alt="Certificado Unincor">
+                            </div>
+                            <div class="certificate-info">
+                                <h3>Curso de Extensão</h3>
+                                <p>UNINCOR - 2023</p>
+                            </div>
+                        </div>
+                        <div class="certificate-back">
+                            <div class="certificate-details">
+                                <h4>Detalhes do Certificado</h4>
+                                <ul>
+                                    <li>Carga horária: 60 horas</li>
+                                    <li>Área: Tecnologia da Informação</li>
+                                    <li>Conteúdo: Programação Web</li>
+                                </ul>
+                                <a href="CSS/PDFs/Certificado(1).pdf" target="_blank" class="pdf-button">
+                                    <i class="fas fa-file-pdf"></i> Ver Certificado
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="certificate-info">
-                    <h3>Certificado Acadêmico</h3>
-                    <p>Unincor - 2023</p>
+                
+                <!-- Certificado 2 -->
+                <div class="certificate-card">
+                    <div class="certificate-inner">
+                        <div class="certificate-front">
+                            <div class="certificate-image">
+                                <img src="CSS/Imagens/Unincor.jpg" alt="Certificado Unincor">
+                            </div>
+                            <div class="certificate-info">
+                                <h3>Workshop Avançado</h3>
+                                <p>UNINCOR - 2023</p>
+                            </div>
+                        </div>
+                        <div class="certificate-back">
+                            <div class="certificate-details">
+                                <h4>Detalhes do Certificado</h4>
+                                <ul>
+                                    <li>Carga horária: 40 horas</li>
+                                    <li>Área: Desenvolvimento</li>
+                                    <li>Conteúdo: Front-end</li>
+                                </ul>
+                                <a href="CSS/PDFs/Certificado(2).pdf" target="_blank" class="pdf-button">
+                                    <i class="fas fa-file-pdf"></i> Ver Certificado
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </a>
-
-            <!-- Repetir para os outros certificados com títulos específicos -->
-            <a href="CSS/PDFs/Certificado(2).pdf" target="_blank" class="certificate-card">
-                <!-- Mesma estrutura -->
-            </a>
-            
-            <!-- Adicione mais certificados conforme necessário -->
+                
+                <!-- Certificado 3 -->
+                <div class="certificate-card">
+                    <div class="certificate-inner">
+                        <div class="certificate-front">
+                            <div class="certificate-image">
+                                <img src="CSS/Imagens/Unincor.jpg" alt="Certificado Unincor">
+                            </div>
+                            <div class="certificate-info">
+                                <h3>Certificação Profissional</h3>
+                                <p>UNINCOR - 2023</p>
+                            </div>
+                        </div>
+                        <div class="certificate-back">
+                            <div class="certificate-details">
+                                <h4>Detalhes do Certificado</h4>
+                                <ul>
+                                    <li>Carga horária: 80 horas</li>
+                                    <li>Área: Back-end</li>
+                                    <li>Conteúdo: Banco de Dados</li>
+                                </ul>
+                                <a href="CSS/PDFs/Certificado(3).pdf" target="_blank" class="pdf-button">
+                                    <i class="fas fa-file-pdf"></i> Ver Certificado
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Certificado 4 -->
+                <div class="certificate-card">
+                    <div class="certificate-inner">
+                        <div class="certificate-front">
+                            <div class="certificate-image">
+                                <img src="CSS/Imagens/Unincor.jpg" alt="Certificado Unincor">
+                            </div>
+                            <div class="certificate-info">
+                                <h3>Curso Completo</h3>
+                                <p>UNINCOR - 2023</p>
+                            </div>
+                        </div>
+                        <div class="certificate-back">
+                            <div class="certificate-details">
+                                <h4>Detalhes do Certificado</h4>
+                                <ul>
+                                    <li>Carga horária: 120 horas</li>
+                                    <li>Área: Full Stack</li>
+                                    <li>Conteúdo: Projeto Integrador</li>
+                                </ul>
+                                <a href="CSS/PDFs/Certificado.pdf" target="_blank" class="pdf-button">
+                                    <i class="fas fa-file-pdf"></i> Ver Certificado
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-
-    <!-- Loader moderno -->
-    <div class="loader-container">
-        <div class="modern-loader">
-            <div class="loader-circle"></div>
-            <div class="loader-circle"></div>
-            <div class="loader-circle"></div>
-        </div>
-    </div>
-
-    <script src="Index.js"></script>
+    </section>
 </body>
 </html>

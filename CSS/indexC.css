@@ -1,201 +1,234 @@
+/* ================== VARIÁVEIS ================== */
 :root {
-    --verde-escuro: #014512;
-    --verde-medio: #017a2b;
-    --verde-claro: #b2dfcf;
-    --verde-brilhante: #00c853;
-    --cinza-claro: #f5f7fa;
-    --cinza-card: #e8f5e9;
-    --branco: #ffffff;
-    --sombra: rgba(0, 0, 0, 0.1);
-    --fonte-padrao: 'Roboto', sans-serif;
+    /* Cores principais */
+    --verde-escuro: #014512; /* Cor verde escuro para textos e detalhes */
+    --verde-medio: #017a2b; /* Cor verde médio para hover e destaques */
+    --verde-claro: #d5e3deb5; /* Cor verde claro para fundos */
+    --verde-brilhante: #00c853; /* Cor verde brilhante para detalhes */
+    
+    /* Cores neutras */
+    --cinza-claro: #e8e8e8; /* Cor de fundo principal */
+    --cinza-card: #e0e0e0; /* Cor de fundo dos cards */
+    --branco: #ffffff; /* Branco puro */
+    
+    /* Cores para sombras */
+    --sombra-escura: #bebebe; /* Sombra escura para efeito 3D */
+    --sombra-clara: #ffffff; /* Sombra clara para efeito 3D */
+    
+    /* Fonte */
+    --fonte-padrao: 'Roboto', sans-serif; /* Fonte principal do site */
 }
 
-/* Reset e Estilos Globais */
-body {
-    font-family: var(--fonte-padrao);
-    background-color: var(--cinza-claro);
-    color: var(--verde-escuro);
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
+/* ================== ESTILOS BASE ================== */
+.certificates-section {
+    font-family: var(--fonte-padrao); /* Aplica a fonte definida */
+    background-color: var(--cinza-claro); /* Cor de fundo da seção */
+    color: var(--verde-escuro); /* Cor do texto */
+    padding: 60px 20px; /* Espaçamento interno (top/bottom 60px, left/right 20px) */
 }
 
-/* Container Principal */
+/* ================== CONTAINER PRINCIPAL ================== */
 .certificates-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    animation: fadeIn 0.8s ease-out;
+    max-width: 1200px; /* Largura máxima do conteúdo */
+    margin: 0 auto; /* Centraliza o container na página */
 }
 
-/* Título */
+/* ================== CABEÇALHO ================== */
+.certificates-header {
+    text-align: center; /* Centraliza o conteúdo */
+    margin-bottom: 50px; /* Espaço abaixo do cabeçalho */
+}
+
 .certificates-title {
-    text-align: center;
-    color: var(--verde-escuro);
-    font-size: 2.5rem;
-    margin-bottom: 50px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    font-size: 2.5em; /* Tamanho grande para o título */
+    margin: 0; /* Remove margens padrão */
+    color: var(--verde-escuro); /* Cor do texto */
+    position: relative; /* Permite posicionamento relativo para elementos filhos */
+    display: inline-block; /* Faz o elemento ocupar apenas o espaço necessário */
 }
 
 .certificates-title i {
-    margin-right: 15px;
-    color: var(--verde-brilhante);
+    margin-right: 15px; /* Espaço entre o ícone e o texto */
 }
 
 .title-underline {
-    width: 100px;
-    height: 4px;
-    background: linear-gradient(90deg, var(--verde-brilhante), var(--verde-escuro));
-    margin-top: 15px;
-    border-radius: 2px;
+    width: 100px; /* Largura da linha */
+    height: 4px; /* Altura da linha */
+    background: linear-gradient(90deg, var(--verde-escuro), var(--verde-brilhante)); /* Gradiente de cores */
+    margin: 15px auto 0; /* Espaçamento (top right/left bottom) */
+    border-radius: 2px; /* Bordas levemente arredondadas */
 }
 
-/* Grid de Certificados */
+/* ================== GRADE DE CERTIFICADOS ================== */
 .certificates-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 30px;
-    padding: 20px;
+    display: grid; /* Ativa o layout de grid */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Colunas responsivas */
+    gap: 40px; /* Espaço entre os cards */
+    padding: 20px; /* Espaçamento interno */
 }
 
-/* Cards de Certificados */
+/* ================== FLIP CARDS ================== */
 .certificate-card {
-    background: var(--branco);
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px var(--sombra);
-    transition: all 0.3s ease;
-    text-decoration: none;
-    color: inherit;
-    display: block;
+    background-color: transparent; /* Fundo transparente */
+    width: 70%; /* Largura total do container */
+    height: 400px; /* Altura fixa */
+    perspective: 1000px; /* Define a perspectiva para efeito 3D */
+    border-radius: 50px; /* Bordas totalmente arredondadas */
+    justify-content: center;
 }
 
-.certificate-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0, 200, 83, 0.2);
+.certificate-inner {
+    position: relative; /* Permite posicionamento absoluto dos filhos */
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    transition: transform 0.8s; /* Animação suave de rotação */
+    transform-style: preserve-3d; /* Mantém o efeito 3D */
+    border-radius: 50px; /* Bordas arredondadas */
+    box-shadow: 20px 20px 60px var(--sombra-escura), 
+               -20px -20px 60px var(--sombra-clara); /* Efeito de sombra 3D */
+}
+
+.certificate-card:hover .certificate-inner {
+    transform: rotateY(180deg); /* Rotaciona o card ao passar o mouse */
+}
+
+/* Estilos compartilhados pelos lados do card */
+.certificate-front, 
+.certificate-back {
+    position: absolute; /* Posicionamento absoluto para sobreposição */
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    backface-visibility: hidden; /* Esconde o verso durante a rotação */
+    border-radius: 50px; /* Bordas arredondadas */
+    display: flex; /* Ativa flexbox */
+    flex-direction: column; /* Organiza os itens verticalmente */
+    overflow: hidden; /* Esconde conteúdo que ultrapassar */
+}
+
+/* Lado frontal */
+.certificate-front {
+    background: var(--cinza-card); /* Cor de fundo */
+    color: var(--verde-escuro); /* Cor do texto */
 }
 
 .certificate-image {
-    position: relative;
-    height: 200px;
-    overflow: hidden;
+    height: 70%; /* Altura relativa */
+    overflow: hidden; /* Esconde partes da imagem que ultrapassarem */
 }
 
 .certificate-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    object-fit: cover; /* Redimensiona a imagem mantendo proporções */
+    transition: transform 0.5s; /* Animação suave de zoom */
 }
 
 .certificate-card:hover .certificate-image img {
-    transform: scale(1.05);
-}
-
-.certificate-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(1, 69, 18, 0.7);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    color: white;
-}
-
-.certificate-card:hover .certificate-overlay {
-    opacity: 1;
-}
-
-.pdf-icon {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    color: var(--branco);
-}
-
-.view-text {
-    font-size: 1.2rem;
-    font-weight: 500;
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
 }
 
 .certificate-info {
-    padding: 20px;
-    text-align: center;
+    padding: 20px; /* Espaçamento interno */
+    text-align: center; /* Texto centralizado */
+    height: 30%; /* Altura relativa */
+    display: flex; /* Ativa flexbox */
+    flex-direction: column; /* Organiza os itens verticalmente */
+    justify-content: center; /* Centraliza verticalmente */
 }
 
 .certificate-info h3 {
-    margin: 0 0 10px;
-    color: var(--verde-escuro);
-    font-size: 1.3rem;
+    margin: 0 0 10px; /* Espaçamento (top right/left bottom) */
+    font-size: 1.3em; /* Tamanho do título */
 }
 
 .certificate-info p {
-    margin: 0;
-    color: var(--verde-medio);
-    font-size: 0.9rem;
+    margin: 0; /* Remove margens padrão */
+    font-size: 0.9em; /* Tamanho do texto */
+    color: var(--verde-medio); /* Cor do texto */
 }
 
-/* Loader Moderno */
-.loader-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.9);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+/* Lado traseiro */
+.certificate-back {
+    background: var(--verde-claro); /* Cor de fundo */
+    transform: rotateY(180deg); /* Começa virado */
+    padding: 30px; /* Espaçamento interno */
+    justify-content: center; /* Centraliza verticalmente */
 }
 
-.modern-loader {
-    display: flex;
-    gap: 10px;
+.certificate-details {
+    height: 100%; /* Altura total */
+    overflow-y: auto; /* Scroll vertical se necessário */
+    padding-right: 10px; /* Espaço para o scroll */
 }
 
-.loader-circle {
-    width: 20px;
-    height: 20px;
-    background: var(--verde-brilhante);
-    border-radius: 50%;
-    animation: bounce 1.5s infinite ease-in-out;
+.certificate-details h4 {
+    margin-top: 0; /* Remove margem superior */
+    color: var(--verde-escuro); /* Cor do texto */
+    border-bottom: 2px solid var(--verde-escuro); /* Linha decorativa */
+    padding-bottom: 5px; /* Espaço entre texto e linha */
 }
 
-.loader-circle:nth-child(2) {
-    animation-delay: 0.2s;
+.certificate-details ul {
+    padding-left: 20px; /* Recuo da lista */
 }
 
-.loader-circle:nth-child(3) {
-    animation-delay: 0.4s;
+.certificate-details li {
+    margin-bottom: 10px; /* Espaço entre itens */
+    font-size: 0.9em; /* Tamanho do texto */
 }
 
-/* Animações */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+/* Botão de PDF */
+.pdf-button {
+    display: inline-block; /* Permite definir largura/altura */
+    margin-top: 20px; /* Espaço acima do botão */
+    padding: 10px 20px; /* Espaçamento interno */
+    background-color: var(--verde-escuro); /* Cor de fundo */
+    color: white; /* Cor do texto */
+    border-radius: 50px; /* Bordas totalmente arredondadas */
+    text-decoration: none; /* Remove sublinhado */
+    transition: all 0.3s; /* Animação suave */
+    font-size: 0.9em; /* Tamanho do texto */
+    text-align: center; /* Texto centralizado */
 }
 
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+.pdf-button:hover {
+    background-color: var(--verde-medio); /* Cor de fundo ao passar mouse */
+    box-shadow: 0 0 0 3px var(--verde-escuro); /* Efeito de borda */
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
+/* ================== RESPONSIVIDADE ================== */
+@media screen and (max-width: 1330px) {
+    .certificates-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas médias */
+    }
+}
+
+@media screen and (max-width: 700px) {
     .certificates-title {
-        font-size: 2rem;
+        font-size: 2em; /* Reduz tamanho do título */
     }
     
     .certificates-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* 1 coluna em telas pequenas */
     }
+    
+    .certificate-card {
+        height: 400px; /* Altura menor para telas pequenas */
+    }
+}
+
+/* ================== ANIMAÇÕES ================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0; /* Começa invisível */
+        transform: translateY(20px); /* Começa 20px abaixo */
+    }
+    to {
+        opacity: 1; /* Termina totalmente visível */
+        transform: translateY(0); /* Volta à posição normal */
+    }
+}
+
+.certificates-container {
+    animation: fadeInUp 0.8s ease-out; /* Aplica a animação */
 }

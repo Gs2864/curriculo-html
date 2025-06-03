@@ -1,7 +1,7 @@
 /* ================== VARIÁVEIS ================== */
 :root {
     --verde-escuro: #014512;             /* Verde escuro usado no texto e hover */
-    --verde-claro: #b2dfcf;              /* Verde claro para fundo de cards */
+    --verde-claro: #e5fff65f;              /* Verde claro para fundo de cards */
     --cinza-claro: #e8e8e8;              /* Cor de fundo do body */
     --cinza-card: #e0e0e0;               /* Cor de fundo dos botões e cards */
     --sombra-escura: #bebebe;            /* Sombra inferior (efeito 3D) */
@@ -86,73 +86,86 @@ section {
     margin: 0 auto;                        /* Centraliza a seção na página */
 }
 
-/* ================== CARDS DE LIVROS ================== */
-.book {
-    position: relative;                   /* Necessário para posicionamento absoluto dos filhos */
-    background-color: var(--verde-claro); /* Cor de fundo do card */
-    box-shadow: 20px 20px 60px var(--sombra-escura), -20px -20px 60px var(--sombra-clara); /* Sombra para efeito 3D */
-    perspective: 2000px;                  /* Efeito de profundidade para a animação 3D */
-    display: flex;                        /* Flexbox ativado */
-    align-items: center;                  /* Alinha conteúdo no centro vertical */
-    justify-content: center;              /* Alinha conteúdo no centro horizontal */
-    color: var(--verde-escuro);           /* Cor do texto interno */
-    width: 300px;                         /* Largura do card */
-    height: 450px;                        /* Altura do card */
-    border-radius: 50px;                  /* Bordas arredondadas */
-    background: var(--cinza-card);        /* Cor de fundo (sobrescreve anterior) */
+/* ================== FLIP CARDS ================== */
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 450px;
+    perspective: 1000px;
+    font-family: var(--fonte-padrao);
+    border-radius: 50px;
 }
 
-/* ================== CAPA DOS LIVROS ================== */
-.cover {
-    position: absolute;                   /* Posicionamento absoluto dentro do card */
-    top: 0;                               /* Alinha ao topo do card */
-    background-color: var(--verde-claro); /* Cor da capa */
-    cursor: pointer;                      /* Mostra que é clicável */
-    transition: all 0.5s;                 /* Suaviza transições */
-    transform-origin: 0;                  /* Define o eixo da rotação */
-    box-shadow: 20px 20px 60px var(--sombra-escura), -20px -20px 60px var(--sombra-clara); /* Sombra para efeito 3D */
-    display: flex;                        /* Flexbox ativado */
-    align-items: center;                  /* Centraliza conteúdo verticalmente */
-    justify-content: center;              /* Centraliza conteúdo horizontalmente */
-    width: 300px;                         /* Largura igual ao card */
-    height: 450px;                        /* Altura igual ao card */
-    border-radius: 50px;                  /* Mesma borda do card */
-    background: var(--cinza-card);        /* Mesma cor do card */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    border-radius: 50px;
+    box-shadow: 20px 20px 60px var(--sombra-escura), -20px -20px 60px var(--sombra-clara);
 }
 
-.book:hover .cover {
-    transform: rotateY(-85.8deg);          /* Faz a capa girar no eixo Y ao passar o mouse */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
 }
 
-/* ================== TEXTOS DOS CARDS ================== */
-.texto-dentro {
-    font-size: 17px;                     /* Tamanho base do texto */
-    text-align: center;                  /* Centraliza o texto */
-    padding: 0;                          /* Espaçamento interno */
-    padding-left: -15px;                 /* Espaçamento interno */
-    padding-right: -15px;                /* Espaçamento interno */
-    width: 100%;                         /* Ocupa toda a largura do card */
-    height: 100%;                        /* Ocupa toda a altura do card */
-    display: flex;                       /* Flexbox ativado */
-    align-items: center;                 /* Centraliza verticalmente */
-    justify-content: center;             /* Centraliza horizontalmente */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-.texto-dentro ul {
-    list-style: none;
-    padding-inline-start: 10px;
-    padding-right: 10px;
+.flip-card-front {
+    background: var(--cinza-card);
+    color: var(--verde-escuro);
 }
 
-.texto-fora {
-    text-align: center;                  /* Centraliza o texto */
-    justify-content: center;             /* Centraliza horizontalmente */
-    font-size: 25px;                     /* Maior que o texto interno para destaque na capa */
-    font-weight: bolder;                 /* Deixa em negrito */
+.flip-card-back {
+    background: var(--verde-claro);
+    color: var(--verde-escuro);
+    transform: rotateY(180deg);
 }
 
-.texto-aesquerda {
-    text-align: left!important;
+.flip-card .title {
+    font-size: 1.8em;
+    font-weight: 900;
+    margin-bottom: 15px;
+    color: var(--verde-escuro);
+}
+
+.flip-card i {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: var(--verde-escuro);
+}
+
+/* Conteúdo dentro dos flip cards */
+.flip-card-content {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 10px;
+    text-align: left;
+}
+
+.flip-card-content ul {
+    padding-left: 20px;
+}
+
+.flip-card-content li {
+    margin-bottom: 8px;
+    font-size: 0.9em;
 }
 
 /* ================== RESPONSIVIDADE ================== */
@@ -163,29 +176,21 @@ section {
     }
 }
 
-@media screen and (max-width: 700px) {         /* Aplica este bloco somente em telas com largura até 700px (mobile) */
-
+@media screen and (max-width: 700px) {
     section {
-        display: flex;                         /* Usa flexbox para organizar os elementos */
-        flex-direction: column;                /* Empilha os elementos verticalmente (em coluna) */
-        justify-content: center;               /* Centraliza os elementos verticalmente */
-        align-items: center;                   /* Centraliza os elementos horizontalmente */
-        gap: 20px;                             /* Adiciona espaço entre os cards */
-        padding: 20px;                         /* Espaçamento interno em todos os lados */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
     }
 
-    .texto-dentro,
-    .texto-fora{
-        padding-right: -15px;                  /* Espaçamento interno */
-        display: flex;                         /* Usa flexbox para alinhar o conteúdo interno */
-        justify-content: center;               /* Centraliza verticalmente o conteúdo */
-        flex-direction: column;                /* Empilha o conteúdo verticalmente */
-        align-items: center;                   /* Centraliza horizontalmente o conteúdo */
-        width: 100%;                           /* Faz o texto ocupar toda a largura disponível */
-        text-align: center;                    /* Centraliza o texto */
+    .flip-card {
+        width: 280px;
+        height: 400px;
     }
 }
-
 
 /* Estilos para a seção de contato */
 .contato-info {
@@ -212,7 +217,7 @@ section {
 }
 
 .contato-item a:hover {
-    color: #01320e;
+    color: #036c1f;
     transform: translateY(-2px);
 }
 
@@ -227,4 +232,30 @@ section {
         gap: 10px;
         align-items: center;
     }
+}
+
+/* Botão de certificados */
+.professional-link {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.certificate-button {
+    background-color: var(--cinza-card);
+    color: var(--verde-escuro);
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 5px 5px 15px var(--sombra-escura), -5px -5px 15px var(--sombra-clara);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.certificate-button:hover {
+    background-color: var(--verde-escuro);
+    color: white;
+    transform: translateY(-3px);
 }
