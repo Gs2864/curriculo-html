@@ -3,73 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel Silva</title>
-    <link rel="stylesheet" href="CSS/indexC.css">
-    <script src="Index.js"></script>
-    <link rel="shortcut icon" href="CSS/Imagens/G.ico" type="image/x-icon">
+    <title>Gabriel Pereira - Certificados</title>
+    <link rel="stylesheet" href="./CSS/indexC.css">
+    <script src="./Index.js"></script>
+    <link rel="shortcut icon" href="./CSS/Imagens/G.ico" type="image/x-icon">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <div class="certificates-container">
+        <h1 class="certificates-title">
+            <i class="fas fa-certificate"></i> Meus Certificados
+            <div class="title-underline"></div>
+        </h1>
+        
+        <div class="certificates-grid">
+            <a href="CSS/PDFs/Certificado(1).pdf" target="_blank" class="certificate-card">
+                <div class="certificate-image">
+                    <img src="CSS/Imagens/Unincor.jpg" alt="Certificado Unincor">
+                    <div class="certificate-overlay">
+                        <span class="pdf-icon"><i class="fas fa-file-pdf"></i></span>
+                        <span class="view-text">Visualizar PDF</span>
+                    </div>
+                </div>
+                <div class="certificate-info">
+                    <h3>Certificado Acadêmico</h3>
+                    <p>Unincor - 2023</p>
+                </div>
+            </a>
 
-    <h1>Meus Certificados</h1>
-    <div class="container">
-        <a href="CSS/PDFs/Certificado(1).pdf" target="_blank">
-            <div class="tooltip-container">
-                <span class="text"><img src="CSS/Imagens/Unincor.jpg" alt=""></span>
-                <span class="pdf-text">Abrir PDF</span>
-            </div>
-        </a>
-
-        <a href="CSS/PDFs/Certificado(2).pdf" target="_blank">
-            <div class="tooltip-container">
-                <span class="text"><img src="CSS/Imagens/Unincor.jpg" alt=""></span>
-                <span class="pdf-text">Abrir PDF</span>
-            </div>
-        </a>
-
-        <a href="CSS/PDFs/Certificado(3).pdf" target="_blank">
-            <div class="tooltip-container">
-                <span class="text"><img src="CSS/Imagens/Unincor.jpg" alt=""></span>
-                <span class="pdf-text">Abrir PDF</span>
-            </div>
-        </a>
-
-        <a href="CSS/PDFs/Certificado.pdf" target="_blank">
-            <div class="tooltip-container">
-                <span class="text"><img src="CSS/Imagens/Unincor.jpg" alt=""></span>
-                <span class="pdf-text">Abrir PDF</span>
-            </div>
-        </a>
+            <!-- Repetir para os outros certificados com títulos específicos -->
+            <a href="CSS/PDFs/Certificado(2).pdf" target="_blank" class="certificate-card">
+                <!-- Mesma estrutura -->
+            </a>
+            
+            <!-- Adicione mais certificados conforme necessário -->
+        </div>
     </div>
 
-    <!-- From Uiverse.io by Timeless-Eve --> 
-<div class="loader">
-    <div class="box box0">
-      <div></div>
+    <!-- Loader moderno -->
+    <div class="loader-container">
+        <div class="modern-loader">
+            <div class="loader-circle"></div>
+            <div class="loader-circle"></div>
+            <div class="loader-circle"></div>
+        </div>
     </div>
-    <div class="box box1">
-      <div></div>
-    </div>
-    <div class="box box2">
-      <div></div>
-    </div>
-    <div class="box box3">
-      <div></div>
-    </div>
-    <div class="box box4">
-      <div></div>
-    </div>
-    <div class="box box5">
-      <div></div>
-    </div>
-    <div class="box box6">
-      <div></div>
-    </div>
-    <div class="box box7">
-      <div></div>
-    </div>
-    <div class="ground">
-      <div></div>
-    </div>
-  </div>
+
+    <script src="Index.js"></script>
 </body>
 </html>
