@@ -1,7 +1,7 @@
 /* ================== VARIÁVEIS ================== */
 :root {
     --verde-escuro: #014512;             /* Verde escuro usado no texto e hover */
-    --verde-claro: #e5fff65f;              /* Verde claro para fundo de cards */
+    --verde-claro: #e1e1e1d5;              /* Verde claro para fundo de cards */
     --cinza-claro: #e8e8e8;              /* Cor de fundo do body */
     --cinza-card: #e0e0e0;               /* Cor de fundo dos botões e cards */
     --sombra-escura: #bebebe;            /* Sombra inferior (efeito 3D) */
