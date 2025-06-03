@@ -61,7 +61,7 @@ button {
     color: var(--verde-escuro);            /* Cor do texto */
     border: none;                          /* Remove borda padrão */
     cursor: pointer;                       /* Cursor de mãozinha ao passar */
-    border-radius: 50px;                   /* Borda totalmente arredondada */
+    border-radius: 10px;                   /* Borda totalmente arredondada */
     width: 220px;                          /* Largura do botão */
     height: 100px;                         /* Altura do botão */
     transition: 0.2s;                      /* Suaviza a transição no hover */
@@ -242,6 +242,8 @@ section {
 }
 
 .certificate-button {
+    margin-top: 30px;
+    margin-bottom: 50px;
     background-color: var(--cinza-card);
     color: var(--verde-escuro);
     padding: 12px 25px;
@@ -256,6 +258,6 @@ section {
 
 .certificate-button:hover {
     background-color: var(--verde-escuro);
-    color: white;
+    color: rgb(255, 255, 255);
     transform: translateY(-3px);
 }

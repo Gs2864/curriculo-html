@@ -1,36 +1,39 @@
-/* ================== VARIÁVEIS ================== */
-:root {
-    /* Cores principais */
-    --verde-escuro: #014512; /* Cor verde escuro para textos e detalhes */
-    --verde-medio: #017a2b; /* Cor verde médio para hover e destaques */
-    --verde-claro: #d5e3deb5; /* Cor verde claro para fundos */
-    --verde-brilhante: #00c853; /* Cor verde brilhante para detalhes */
-    
-    /* Cores neutras */
-    --cinza-claro: #e8e8e8; /* Cor de fundo principal */
-    --cinza-card: #e0e0e0; /* Cor de fundo dos cards */
-    --branco: #ffffff; /* Branco puro */
-    
-    /* Cores para sombras */
-    --sombra-escura: #bebebe; /* Sombra escura para efeito 3D */
-    --sombra-clara: #ffffff; /* Sombra clara para efeito 3D */
-    
-    /* Fonte */
-    --fonte-padrao: 'Roboto', sans-serif; /* Fonte principal do site */
+body{
+    --verde-escuro: #014512;             /* Verde escuro usado no texto e hover */
+    --verde-claro: #e1e1e1f4;              /* Verde claro para fundo de cards */
+    --cinza-claro: #e8e8e8;              /* Cor de fundo do body */
+    --cinza-card: #e0e0e0;               /* Cor de fundo dos botões e cards */
+    --sombra-escura: #aaa9a9;            /* Sombra inferior (efeito 3D) */
+    --sombra-clara: #e7e7e7;             /* Sombra superior (efeito 3D) */
+    --fonte-padrao: 'Roboto', sans-serif;  /* Fonte padrão do site */
+    margin: auto;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(to right, #c0c1c0, #f6f3f2);
+
 }
 
 /* ================== ESTILOS BASE ================== */
 .certificates-section {
+    width: auto;
+    background-size: cover; /* Garante que a imagem preencha a tela */
+    margin-bottom: 15px;
+    padding: 500%;
     font-family: var(--fonte-padrao); /* Aplica a fonte definida */
-    background-color: var(--cinza-claro); /* Cor de fundo da seção */
+    background: linear-gradient(to right, #c0c1c0, #f6f3f2);
+    width: 100%;
+    min-height: 100vh; /* Garante que cubra toda a altura da tela */
+    padding: 60px 0; /* Ajuste o padding conforme necessário */
+    font-family: var(--fonte-padrao);
+    color: var(--verde-escuro);
     color: var(--verde-escuro); /* Cor do texto */
-    padding: 60px 20px; /* Espaçamento interno (top/bottom 60px, left/right 20px) */
+    ; /* Espaçamento interno (top/bottom 60px, left/right 20px) */
 }
 
 /* ================== CONTAINER PRINCIPAL ================== */
 .certificates-container {
     max-width: 1200px; /* Largura máxima do conteúdo */
-    margin: 0 auto; /* Centraliza o container na página */
+    margin: auto; /* Centraliza o container na página */
 }
 
 /* ================== CABEÇALHO ================== */
@@ -61,9 +64,11 @@
 
 /* ================== GRADE DE CERTIFICADOS ================== */
 .certificates-grid {
+    justify-items: center;
     display: grid; /* Ativa o layout de grid */
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Colunas responsivas */
-    gap: 40px; /* Espaço entre os cards */
+    gap: 80px; /* Espaço entre os cards */
+    row-gap: 15%;
     padding: 20px; /* Espaçamento interno */
 }
 
@@ -95,6 +100,8 @@
 /* Estilos compartilhados pelos lados do card */
 .certificate-front, 
 .certificate-back {
+    justify-content: 10px;
+    margin-top: 10px;
     position: absolute; /* Posicionamento absoluto para sobreposição */
     width: 100%; /* Largura total */
     height: 100%; /* Altura total */
@@ -197,7 +204,7 @@
 }
 
 /* ================== RESPONSIVIDADE ================== */
-@media screen and (max-width: 1330px) {
+@media screen and (max-width: 1333px) {
     .certificates-grid {
         grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas médias */
     }
