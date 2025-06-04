@@ -138,6 +138,7 @@ section {
     background: var(--verde-claro);
     color: var(--verde-escuro);
     transform: rotateY(180deg);
+    
 }
 
 .flip-card .title {
