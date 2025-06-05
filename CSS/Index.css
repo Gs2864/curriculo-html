@@ -135,6 +135,7 @@ section {
 }
 
 .flip-card-back {
+
     background: var(--verde-claro);
     color: var(--verde-escuro);
     transform: rotateY(180deg);
@@ -264,4 +265,8 @@ section {
     background-color: var(--verde-escuro);
     color: rgb(255, 255, 255);
     transform: translateY(-3px);
+}
+
+ul{
+    padding-left: 10%;
 }
