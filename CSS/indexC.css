@@ -159,7 +159,7 @@ body{
 .certificate-back {
     background: var(--verde-claro); /* Cor de fundo */
     transform: rotateY(180deg); /* Começa virado */
-    margin-left: -10%;
+    margin-left: -13%;
     padding: 30px; /* Espaçamento interno */
     justify-content: center; /* Centraliza verticalmente */
 }
