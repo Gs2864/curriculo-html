@@ -4,8 +4,8 @@
     --verde-claro: #e1e1e1d5;              /* Verde claro para fundo de cards */
     --cinza-claro: #e8e8e8;              /* Cor de fundo do body */
     --cinza-card: #e0e0e0;               /* Cor de fundo dos botões e cards */
-    --sombra-escura: #bebebe;            /* Sombra inferior (efeito 3D) */
-    --sombra-clara: #ffffff;             /* Sombra superior (efeito 3D) */
+    --sombra-escura: #0f3a2374;            /* Sombra inferior (efeito 3D) */
+    --sombra-clara: #cdcdcd7c;             /* Sombra superior (efeito 3D) */
     --fonte-padrao: 'Roboto', sans-serif;  /* Fonte padrão do site */
 }
 
@@ -14,7 +14,7 @@
 body {
     font-family: var(--fonte-padrao);       /* Aplica a fonte definida nas variáveis */
     color: var(--verde-escuro);             /* Define a cor do texto */
-    background-color: var(--cinza-claro);   /* Define a cor de fundo da página */
+    background: linear-gradient(to right, #c0c1c0, #f6f3f2);
     height: 100vh;                          /* Faz o body ocupar 100% da altura da viewport */
 }
 
@@ -29,8 +29,9 @@ a:focus {
 
 /* ================== CABEÇALHO ================== */
 header {
+    margin-top: 5%;
     text-align: center;              /* Centraliza o conteúdo */
-    margin-bottom: 30px;             /* Espaço abaixo do cabeçalho */
+    margin-bottom: 50px;             /* Espaço abaixo do cabeçalho */
 }
 
 header h1 {
