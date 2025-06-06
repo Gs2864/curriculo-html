@@ -224,7 +224,6 @@ body{
     
     .certificate-card {
         height: 400px; /* Altura menor para telas pequenas */
-        margin-bottom: 20%;
     }
 }
 
