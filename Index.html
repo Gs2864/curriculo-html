@@ -1,51 +1,79 @@
 <!DOCTYPE html>
+<!-- Declaração do tipo de documento como HTML5 -->
 <html lang="pt-br">
+<!-- Define o idioma principal do documento como português do Brasil -->
 <head>
+    <!-- Seção de cabeçalho contendo metadados e links para recursos externos -->
     <meta charset="UTF-8">
+    <!-- Define a codificação de caracteres como UTF-8 para suportar caracteres especiais -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Configura a viewport para renderização responsiva em dispositivos móveis -->
     <title>Gabriel Pereira - Currículo Profissional</title>
+    <!-- Título que aparece na aba do navegador -->
     <link rel="stylesheet" href="CSS/Index.css">
+    <!-- Link para o arquivo CSS que contém os estilos da página -->
     <link rel="shortcut icon" href="CSS/Imagens/G.ico" type="image/x-icon">
+    <!-- Define o ícone favorito (favicon) que aparece na aba do navegador -->
     <!-- Font Awesome para ícones profissionais -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Importa a biblioteca Font Awesome para usar ícones profissionais -->
+</head>
 
 <body>
-
+    <!-- Corpo do documento - conteúdo visível da página -->
     <div class="container">
+        <!-- Divisão principal que envolve todo o conteúdo -->
         <header>
+            <!-- Cabeçalho do conteúdo -->
             <h1>Gabriel Pereira José da Silva</h1>
+            <!-- Título principal com o nome completo -->
             <p class="subtitle">Estudante de Ciências da Computação & Profissional Administrativo | 23 Anos</p>
+            <!-- Subtítulo com informações profissionais e idade -->
             
-            <!-- Informações de contato profissionais -->
+            <!-- Container com informações de contato -->
             <div class="contato-info">
+                <!-- Item de contato - WhatsApp -->
                 <div class="contato-item">
                     <a href="https://wa.me/5535991955825" target="_blank">
+                        <!-- Link para WhatsApp que abre em nova aba -->
                         <i class="fab fa-whatsapp"></i> (35) 99195-5825
+                        <!-- Ícone do WhatsApp seguido do número de telefone -->
                     </a>
                 </div>
+                <!-- Item de contato - E-mail -->
                 <div class="contato-item">
                     <i class="fas fa-envelope"></i> &nbsp;&nbsp;gs286434@gmail.com
+                    <!-- Ícone de e-mail seguido do endereço de e-mail -->
                 </div>
+                <!-- Item de contato - LinkedIn -->
                 <div class="contato-item">
                     <a href="http://www.linkedin.com/in/gabriel-silva-611698237" target="_blank">
+                        <!-- Link para LinkedIn que abre em nova aba -->
                         <i class="fab fa-linkedin"></i> Perfil LinkedIn
+                        <!-- Ícone do LinkedIn seguido do texto do link -->
                     </a>
                 </div>
             </div>
         </header>
 
+        <!-- Seção principal com os cartões flip -->
         <section class="flex">
-
-            <!-- Perfil Profissional como Flip Card -->
+            <!-- Primeiro cartão flip - Perfil Profissional -->
             <div class="flip-card">
+                <!-- Container do efeito flip -->
                 <div class="flip-card-inner">
+                    <!-- Lado frontal do cartão -->
                     <div class="flip-card-front">
                         <p class="title">PERFIL PROFISSIONAL</p>
+                        <!-- Título do cartão -->
                     </div>
+                    <!-- Lado traseiro do cartão -->
                     <div class="flip-card-back">
                         <div class="texto-dentro">
+                            <!-- Conteúdo do perfil profissional -->
                             <p>Profissional dinâmico com combinação única de disciplina militar, expertise administrativa e competências técnicas emergentes em Ciência da Computação.</p>
                             <ul style="text-align: left; padding-left: 20px;">
+                                <!-- Lista de habilidades -->
                                 <li>Capacidade analítica e resolução de problemas</li>
                                 <li>Excelente organização e gestão de múltiplas tarefas</li>
                                 <li>Rápida adaptação a novas tecnologias</li>
@@ -56,49 +84,53 @@
                 </div>
             </div>
 
-            <!-- Experiência Profissional como Flip Card -->
+            <!-- Segundo cartão flip - Experiência Profissional -->
             <div class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <p class="title">EXPERIÊNCIA</p>
                         <p><i class="fas fa-briefcase fa-3x"></i></p>
+                        <!-- Ícone de maleta (3 vezes maior que o padrão) -->
                     </div>
                     <div class="flip-card-back">
                         <div class="texto-dentro">
+                            <!-- Primeira experiência profissional -->
                             <div class="experience-item">
                                 <h3>Auxiliar Administrativo</h3>
                                 <p class="company">Natus Farma | Abril 2023 - Atual</p>
-                            
+                                <ul style="text-align: left; padding-left: 20px;">
                                     <li>Gestão de processos administrativos e fluxo documental</li>
                                     <li>Otimização de rotinas operacionais</li>
-                                
+                                </ul>
                             </div>
+                            <!-- Segunda experiência profissional -->
                             <div class="experience-item">
                                 <h3>Auxiliar de Estoque</h3>
                                 <p class="company">Natus Farma | Abr 2023 - Abr 2024</p>
-                            
+                                <ul style="text-align: left; padding-left: 20px;">
                                     <li>Controle de inventário e logística</li>
                                     <li>Organização sistemática de armazenamento</li>
-                               
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Formação Acadêmica como Flip Card -->
+            <!-- Terceiro cartão flip - Formação Acadêmica -->
             <div class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <p class="title">FORMAÇÃO</p>
                         <p><i class="fas fa-graduation-cap fa-3x"></i></p>
+                        <!-- Ícone de capelo de formatura (3 vezes maior) -->
                     </div>
                     <div class="flip-card-back">
                         <div class="texto-dentro">
                             <div class="education-item">
                                 <h3>Ciência da Computação</h3>
                                 <p class="institution">Unincor | Cursando</p>
-                                <ul>
+                                <ul style="text-align: left; padding-left: 20px;">
                                     <li>Foco em <em>backend development</em> e banco de dados</li>
                                     <li>Disciplinas: Estruturas de Dados, Algoritmos, SQL</li>
                                 </ul>
@@ -108,26 +140,29 @@
                 </div>
             </div>
 
-            <!-- Habilidades Técnicas como Flip Card -->
+            <!-- Quarto cartão flip - Habilidades Técnicas -->
             <div class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <p class="title">HABILIDADES</p>
                         <p><i class="fas fa-laptop-code fa-3x"></i></p>
+                        <!-- Ícone de laptop com código (3 vezes maior) -->
                     </div>
                     <div class="flip-card-back">
                         <div class="texto-dentro">
+                            <!-- Seção de habilidades tecnológicas -->
                             <div class="skills-section">
                                 <h3>Tecnologia</h3>
-                                <ul>
+                                <ul style="text-align: left; padding-left: 20px;">
                                     <li><strong>Linguagens:</strong> C++, SQL (básico/intermediário)</li>
                                     <li><strong>Web:</strong> HTML5, CSS3</li>
                                     <li><strong>Conceitos:</strong> POO, Estruturas de Dados</li>
                                 </ul>
                             </div>
+                            <!-- Seção de ferramentas -->
                             <div class="skills-section">
                                 <h3>Ferramentas</h3>
-                                <ul>
+                                <ul style="text-align: left; padding-left: 20px;">
                                     <li>Pacote Office (Excel intermediário)</li>
                                     <li>Google Workspace</li>
                                     <li>Sistemas ERP</li>
@@ -137,20 +172,21 @@
                     </div>
                 </div>
             </div>
-
         </section>
 
-        <!-- Rodapé profissional -->
+        <!-- Rodapé da página -->
         <footer>
+            <!-- Link para página de certificações -->
             <a href="certificados.html" target="_blank" class="professional-link">
                 <div class="certificate-button">
                     <i class="fas fa-certificate"></i> Ver Certificações
+                    <!-- Ícone de certificado seguido do texto do link -->
                 </div>
             </a>
         </footer>
-
     </div>
 
+    <!-- Link para arquivo JavaScript externo -->
     <script src="script.js"></script>
 </body>
 </html>
