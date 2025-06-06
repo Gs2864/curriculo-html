@@ -18,7 +18,7 @@ body{
 .certificates-section {
     width: auto;
     background-size: cover; /* Garante que a imagem preencha a tela */
-    margin-bottom: 15px;
+    margin-bottom: 20%;
     padding: 500%;
     font-family: var(--fonte-padrao); /* Aplica a fonte definida */
     background: linear-gradient(to right, #c0c1c0, #f6f3f2);
@@ -224,6 +224,7 @@ body{
     
     .certificate-card {
         height: 400px; /* Altura menor para telas pequenas */
+        margin-bottom: 20%;
     }
 }
 
