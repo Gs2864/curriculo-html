@@ -1,19 +1,17 @@
-body {
-    --verde-escuro: #014512;
-    --verde-claro: #e1e1e1f4;
-    --cinza-claro: #e8e8e8;
-    --cinza-card: #e0e0e0;
-    --sombra-escura: #0f3a2374;
-    --sombra-clara: #e7e7e7;
-    --fonte-padrao: 'Roboto', sans-serif;
-    
-    /* Correções principais: */
-    margin: 0;
-    padding: 0;
-    width: 100%; /* Adicionado */
-    min-height: 100vh;
+body{
+    --verde-escuro: #014512;             /* Verde escuro usado no texto e hover */
+    --verde-claro: #e1e1e1f4;              /* Verde claro para fundo de cards */
+    --cinza-claro: #e8e8e8;              /* Cor de fundo do body */
+    --cinza-card: #e0e0e0;               /* Cor de fundo dos botões e cards */
+    --sombra-escura: #0f3a2374;            /* Sombra inferior (efeito 3D) */
+    --sombra-clara: #e7e7e7;             /* Sombra superior (efeito 3D) */
+    --fonte-padrao: 'Roboto', sans-serif;  /* Fonte padrão do site */
+    height: auto;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
     background: linear-gradient(to right, #c0c1c0, #f6f3f2);
     font-family: var(--fonte-padrao);
 }
@@ -243,6 +241,12 @@ body {
     }
 }
 
+/* Ajusta o grid de certificados */
+    .certificates-grid {
+        gap: 40px; /* Reduz o espaçamento */
+        padding: 10px; /* Padding menor */
+    }
+
 /* ================== ANIMAÇÕES ================== */
 @keyframes fadeInUp {
     from {
@@ -259,14 +263,6 @@ body {
     animation: fadeInUp 0.8s ease-out; /* Aplica a animação */
 }
 
-/* Ajusta o grid de certificados */
-    .certificates-grid {
-        grid-template-columns: 1fr; /* 1 coluna */
-        gap: 40px; /* Reduz o espaçamento */
-        row-gap: 100px; /* Espaçamento uniforme */
-        padding: 10px; /* Padding menor */
-    }
-
 /* Garante que o rodapé fique no final da página */
 body {
     display: flex;
@@ -279,5 +275,5 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
-}
 
+    
