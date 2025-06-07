@@ -174,7 +174,7 @@ body{
     background: var(--verde-claro); /* Cor de fundo */
     transform: rotateY(180deg); /* Começa virado */
     margin-top: -6%;
-    margin-left: -13%;
+    margin-left: -12%;
     padding: 30px; /* Espaçamento interno */
     justify-content: center; /* Centraliza verticalmente */
 }
@@ -275,5 +275,4 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
-
-    
+}
