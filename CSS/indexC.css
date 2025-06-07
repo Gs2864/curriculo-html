@@ -82,7 +82,7 @@ body{
     justify-items: center;
     display: grid; /* Ativa o layout de grid */
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Colunas responsivas */
-    gap: 80px; /* Espaço entre os cards */
+    gap: 100px; /* Espaço entre os cards */
     row-gap: 15%;
     padding: 20px; /* Espaçamento interno */
 }
@@ -115,6 +115,7 @@ body{
 /* Estilos compartilhados pelos lados do card */
 .certificate-front, 
 .certificate-back {
+    
     justify-content: 10px;
     margin-top: 0%;
     position: absolute; /* Posicionamento absoluto para sobreposição */
@@ -243,7 +244,7 @@ body{
 
 /* Ajusta o grid de certificados */
     .certificates-grid {
-        gap: 40px; /* Reduz o espaçamento */
+        gap: 80px; /* Reduz o espaçamento */
         padding: 10px; /* Padding menor */
     }
 
