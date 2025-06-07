@@ -21,7 +21,7 @@ body{
     flex: 1;
     width: auto;
     background-size: cover; /* Garante que a imagem preencha a tela */
-    margin-bottom: 20%;
+    margin-bottom: auto;
     padding: 60px 20px; /* ou algo como 80px 20px para mais espaço */
     font-family: var(--fonte-padrao); /* Aplica a fonte definida */
     background: linear-gradient(to right, #c0c1c0, #f6f3f2);
